@@ -1,0 +1,111 @@
+Arguments: 
+  /Users/wzyan/.nvm/versions/node/v12.21.0/bin/node /Users/wzyan/.nvm/versions/node/v12.21.0/bin/yarn global dir --json
+
+PATH: 
+  /Users/wzyan/.nvm/versions/node/v12.21.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS:/Users/wzyan/Library/maven/bin:/Users/wzyan/Library/tomcat/bin:/usr/local/mongodb/bin
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  12.21.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/wzyan/Documents/selfspace/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /Users/wzyan/.nvm/versions/node/v12.21.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/wzyan/.nvm/versions/node/v12.21.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/wzyan/.nvm/versions/node/v12.21.0/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+      "name": "webpack-study",
+      "version": "1.0.0",
+      "description": "- entry\r - chunk",
+      "main": "webpack.config.js",
+      "devDependencies": {
+          "@babel/core": "^7.4.4",
+          "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+          "@babel/preset-env": "^7.4.4",
+          "@babel/preset-react": "^7.0.0",
+          "autoprefixer": "^9.5.1",
+          "babel-eslint": "^10.0.1",
+          "babel-loader": "^8.0.5",
+          "clean-webpack-plugin": "^2.0.2",
+          "css-loader": "^2.1.1",
+          "cssnano": "^4.1.10",
+          "eslint": "^5.16.0",
+          "eslint-config-airbnb": "^17.1.0",
+          "eslint-config-airbnb-base": "^13.1.0",
+          "eslint-loader": "^2.1.2",
+          "eslint-plugin-import": "^2.17.3",
+          "eslint-plugin-jsx-a11y": "^6.2.1",
+          "eslint-plugin-react": "^7.13.0",
+          "express": "^4.17.1",
+          "file-loader": "^3.0.1",
+          "friendly-errors-webpack-plugin": "^1.7.0",
+          "glob": "^7.1.4",
+          "html-inline-css-webpack-plugin": "^1.2.1",
+          "html-loader": "^0.5.5",
+          "html-webpack-externals-plugin": "^3.8.0",
+          "html-webpack-inline-source-plugin": "0.0.10",
+          "html-webpack-plugin": "^3.2.0",
+          "less": "^3.9.0",
+          "less-loader": "^5.0.0",
+          "mini-css-extract-plugin": "^0.6.0",
+          "node-notifier": "^5.4.0",
+          "optimize-css-assets-webpack-plugin": "^5.0.1",
+          "postcss-loader": "^3.0.0",
+          "postcss-preset-env": "^6.6.0",
+          "px2rem-loader": "^0.1.9",
+          "raw-loader": "^0.5.1",
+          "react": "^16.8.6",
+          "react-dom": "^16.8.6",
+          "rimraf": "^2.6.3",
+          "style-loader": "^0.23.1",
+          "terser-webpack-plugin": "^1.3.0",
+          "uglifyjs-webpack-plugin": "^2.1.2",
+          "url-loader": "^1.1.2",
+          "webpack": "^4.31.0",
+          "webpack-cli": "^3.3.2",
+          "webpack-dev-server": "^3.3.1",
+          "cache-loader": "^4.0.1",
+          "happypack": "^5.0.1",
+          "hard-source-webpack-plugin": "^0.13.1",
+          "image-webpack-loader": "^5.0.0",
+          "purgecss-webpack-plugin": "^1.5.0",
+          "speed-measure-webpack-plugin": "^1.3.1",
+          "thread-loader": "^2.1.2",
+          "webpack-bundle-analyzer": "^3.3.2"
+      },
+      "dependencies": {
+          "babel-polyfill": "^6.26.0",
+          "jszip": "^3.10.0",
+          "large-number": "^1.0.1",
+          "lib-flexible": "^0.3.2",
+          "webpack-merge": "^5.8.0",
+          "wzyan-large-number": "^1.0.2"
+      },
+      "scripts": {
+          "dev": "webpack-dev-server --open --config webpack.dev.js",
+          "build": "webpack --config webpack.prod.js",
+          "watch": "webpack --watch",
+          "build:ssr": "webpack --config 15.webpack实现react-ssr打包/webpack.ssr.js && nodemon 15.webpack实现react-ssr打包/server/index.js",
+          "build:stats": "webpack --config 21.webpack性能分析/webpack.config.js --json > stats.json",
+          "build:speed-stats": "webpack --config 21.webpack性能分析/webpack.speed.js",
+          "build:bundle-stats": "webpack --config 21.webpack性能分析/webpack.bundle.js"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
