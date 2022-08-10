@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'SourceHanSerifSC-Heavy';
+    src: url('./SourceHanSerifSC-Heavy.otf') format('truetype');
+}
+div {
+    font-family: 'SourceHanSerifSC-Heavy';
+    display: flex;
+}
+img {
+    width: 100px;
+}
