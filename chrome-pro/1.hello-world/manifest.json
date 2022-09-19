@@ -23,7 +23,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["js/content_script.js"]
+      "js": ["js/content_script.js", "utils/google-api.js"]
     }
   ],
   // 插件主页，这个很重要，不要浪费了这个免费广告位

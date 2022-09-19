@@ -1,6 +1,8 @@
+// let messageObj = googleApi.getMessageObj('content-script')
 // 监听收到的消息，根据action来分别处理
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
+        debugger
         if (request.action === 'checkForContent') {
             checkForContent(request, sender, sendResponse);
             return true;

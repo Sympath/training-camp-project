@@ -15,21 +15,26 @@ function getMessageObj(key, contentType) {
     }
     if (contentType === 'long') {
         onmessage = (connectName) => {
-            chrome.runtime.onConnect.addListener(function (port) {
-                if (connectName === port.name) {
-                    port.onMessage.addListener(function (msg) {
-                        port.postMessage(`我收到啦，${msg}`)
-                    })
-                }
+            return new Promise((res, rej) => {
+                chrome.runtime.onConnect.addListener(function (port) {
+                    if (connectName === port.name) {
+                        res(port)
+                        // port.onMessage.addListener(function (msg) {
+                        //     port.postMessage(`我收到啦，${msg}`)
+                        // })
+                    }
+                })
             })
         }
         postMessageKey = 'longPostMessage'
     }
     if (contentType === 'external') {
         onmessage = () => {
-            chrome.runtime.onMessageExternal.addListener(function (request, sender, sendResponse) {
-                res({ request, sender, sendResponse })
-            });
+            return new Promise((res, rej) => {
+                chrome.runtime.onMessageExternal.addListener(function (request, sender, sendResponse) {
+                    res({ request, sender, sendResponse })
+                });
+            })
         }
         postMessageKey = 'longPostMessage'
     }
@@ -45,7 +50,7 @@ function getMessageObj(key, contentType) {
                                 info,
                                 function (response) {
                                     if (response) {
-                                        res(response.results);
+                                        res(response);
                                     } else {
                                         rej()
                                     }
@@ -77,7 +82,7 @@ function getMessageObj(key, contentType) {
                 return new Promise((res, rej) => {
                     port.onMessage.addListener(function (response) {
                         if (response) {
-                            res(response.results);
+                            res(response);
                         } else {
                             rej()
                         }
@@ -90,4 +95,8 @@ function getMessageObj(key, contentType) {
         postMessage: postMessageMap[key][postMessageKey],
         onmessage
     }
+}
+
+let googleApi = {
+    getMessageObj
 }
