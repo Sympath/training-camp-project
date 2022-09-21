@@ -1,5 +1,3 @@
-let targetWindow = null; //当前激活的浏览器窗口
-let tabCount = 0; //当前激活浏览器窗口里的tab的数量
 /** 实现将所有窗口等tab页合并到当前窗口
     1. 监听图标点击事件
     2. 获取当前窗口，作为目标窗口
@@ -9,31 +7,15 @@ let tabCount = 0; //当前激活浏览器窗口里的tab的数量
     3.3 指定目标索引：起始位置是当前窗口的tab数；然后每次+1就是目标
  */
 
-// function getCurrent() {
-//     chrome.windows.getCurrent((win) => {
-//         targetWindow = win;
-//         chrome.tabs.getAllInWindow(targetWindow.id, (tabs) => {
-//             tabCount = tabs.length;
-//             chrome.windows.getAll({ "populate": true }, (windows) => {
-//                 var numWindows = windows.length;
-//                 var tabPosition = tabCount;
-//                 for (var i = 0; i < numWindows; i++) {
-//                     var win = windows[i];
-//                     if (targetWindow.id != win.id) {
-//                         var numTabs = win.tabs.length;
-//                         for (var j = 0; j < numWindows; j++) {
-//                             var tab = win.tabs[j];
-//                             chrome.tabs.move(tab.id, { "windowId": targetWindow.id, "index": tabPosition });
-//                             tabPosition++;
-//                         }
-//                     }
-
-//                 }
-
-//             });
-//         });
-//     })
-// }
+function promisify(cb) {
+    return function (...params) {
+        return new Promise((res, rej) => {
+            cb(...params, function (result) {
+                res(result)
+            })
+        })
+    }
+}
 let funNames = [
     {
         chromeName: 'windows',
@@ -52,15 +34,8 @@ funNames.forEach(({ chromeName, funName }) => {
     chrome[chromeName][funName] = promisify(chrome[chromeName][funName])
 })
 
-function promisify(cb) {
-    return function (...params) {
-        return new Promise((res, rej) => {
-            cb(...params, function (result) {
-                res(result)
-            })
-        })
-    }
-}
+let targetWindow = null; //当前激活的浏览器窗口
+let tabCount = 0; //当前激活浏览器窗口里的tab的数量
 /**
  * 点击浏览器图标绑定的事件
  * @param tab

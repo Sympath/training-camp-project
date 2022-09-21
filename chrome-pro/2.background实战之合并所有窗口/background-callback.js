@@ -14,7 +14,7 @@ function getWindows(win) {
 }
 function getTabs(tabs) {
   tabCount = tabs.length;
-  chrome.windows.getAll({"populate": true}, moveTabs);
+  chrome.windows.getAll({ "populate": true }, moveTabs);
 }
 function moveTabs(windows) {
   var numWindows = windows.length;
@@ -23,15 +23,13 @@ function moveTabs(windows) {
     var win = windows[i];
     if (targetWindow.id != win.id) {
       var numTabs = win.tabs.length;
-      for (var j = 0; j < numWindows; j++) {
+      for (var j = 0; j < numTabs; j++) {
         var tab = win.tabs[j];
-        chrome.tabs.move(tab.id, {"windowId":targetWindow.id, "index": tabPosition});
+        chrome.tabs.move(tab.id, { "windowId": targetWindow.id, "index": tabPosition });
         tabPosition++;
       }
     }
-
   }
-
 }
 // 地址栏图标绑定点击事件
 chrome.browserAction.onClicked.addListener(start);
