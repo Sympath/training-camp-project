@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "显示百度对名称对搜索结构",
+    "version": "1.0",
+    "description": "显示百度对名称对搜索结构",
+    "browser_action": {
+        "default_title": "显示百度对名称对搜索结构",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "*://*.baidu.com/*"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
