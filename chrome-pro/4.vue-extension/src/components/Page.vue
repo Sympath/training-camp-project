@@ -10,7 +10,9 @@
         <p>hot refresh local:8080</p>
       </div>
     </div>
-    <!-- <div class="page-author"><a href="http://liujinkai.com">by 王志远</a></div> -->
+    <div class="page-author">
+      <a href="http://82.157.62.28:49153/">by 王志远</a>
+    </div>
   </div>
 </template>
 
