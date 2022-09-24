@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "USD Price",
+    "name": "weiyi USD Price",
     "version": "1.0",
-    "description": "查询美元当日价格",
+    "description": "微医自己的汇率查询工具",
     "background": {
         "scripts": [
             "js/background.js"
