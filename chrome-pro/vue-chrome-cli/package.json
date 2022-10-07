@@ -1,0 +1,21 @@
+{
+  "name": "vue-chrome-cli",
+  "version": "1.0.1",
+  "description": "脚手架,做着玩得  现在就一个vue得，没时间搞，选啥都是vue  o(*￣▽￣*)ブ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "over": "git add . && git commit -m 'vue-chrome-cli' && git push && npm publish"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^3.0.2",
+    "download-git-repo": "^2.0.0",
+    "inquirer": "^7.0.0",
+    "ora": "^4.0.2"
+  },
+  "bin": {
+    "vue-chrome-cli": "main.js"
+  },
+  "author": "wzyuan",
+  "license": "ISC"
+}
