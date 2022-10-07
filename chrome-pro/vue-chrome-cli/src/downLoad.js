@@ -11,13 +11,18 @@ let clone = false
 let downGit = (chooses, name) => {
     const spinner = ora('正在拉取模板...')
     spinner.start()
-    downLoad(chooses.url, name, {
-        clone
-    }, err => {
-        spinner.stop()
-        console.log(err ? err : "项目创建成功")
-        process.exit(1)
-    })
+    return new Promise((resolve, reject) => {
+        downLoad(chooses.url, name, {
+            clone
+        }, err => {
+            spinner.stop()
+            if (err) {
+                reject(err)
+            } else {
+                resolve()
+            }
+        })
+    }) 
 
 }
 module.exports = downGit
