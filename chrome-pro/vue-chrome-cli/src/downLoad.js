@@ -11,7 +11,7 @@ let clone = false
 let downGit = (chooses, name) => {
     const spinner = ora('正在拉取模板...')
     spinner.start()
-    downLoad(url, name, {
+    downLoad(chooses.url, name, {
         clone
     }, err => {
         spinner.stop()

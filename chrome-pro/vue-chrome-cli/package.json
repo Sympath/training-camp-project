@@ -3,8 +3,7 @@
   "version": "1.0.1",
   "description": "脚手架,做着玩得  现在就一个vue得，没时间搞，选啥都是vue  o(*￣▽￣*)ブ",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "over": "git add . && git commit -m 'vue-chrome-cli' && git push && npm publish"
+    "publish": "chmod 777 ./sh/publish.sh && sh ./sh/publish.sh"
   },
   "dependencies": {
     "chalk": "^2.4.2",
