@@ -1,7 +1,8 @@
 {
   "name": "vue-chrome-cli",
-  "version": "1.0.4",
-  "description": "脚手架,做着玩得  现在就一个vue得，没时间搞，选啥都是vue  o(*￣▽￣*)ブ",
+  "version": "1.0.5",
+  "description": "vue开发chrome的脚手架",
+  "type": "module",
   "scripts": {
     "publish-sh": "chmod 777 ./sh/publish.sh && sh ./sh/publish.sh"
   },
@@ -10,7 +11,8 @@
     "commander": "^3.0.2",
     "download-git-repo": "^2.0.0",
     "inquirer": "^7.0.0",
-    "ora": "^4.0.2"
+    "ora": "^4.0.2",
+    "esm": "^3.2.25"
   },
   "bin": {
     "vue-chrome-cli": "main.js"

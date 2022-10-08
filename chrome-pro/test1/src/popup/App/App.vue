@@ -1,17 +1,12 @@
 <template>
   <div class="main_app">
-    <h1>Hello popup1</h1>
+    <h1>Hello popup 1111sssaa</h1>
   </div>
 </template>
 
 <script>
-// import googleUtils from "../../utils/google-utils";
 export default {
   name: "app",
-  async mounted() {
-    // console.log(chrome.runtime);
-    // googleUtils.getMessageObj('popup').postMessage({})
-  },
 };
 </script>
 
